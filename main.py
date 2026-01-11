@@ -1,11 +1,14 @@
 import random
 from fastapi import FastAPI
-import routes.user_route as user_route
+from routes import user_route
+
 
 
 app = FastAPI()
 
-app.include_router(user_route.router)
+user_router = user_route.router
+
+app.include_router(user_router)
 
 @app.get("/")
 async def root():
