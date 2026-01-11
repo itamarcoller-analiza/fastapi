@@ -1,6 +1,6 @@
 import random
 from fastapi import FastAPI
-from routes import user_route
+import routes.user_route as user_route
 
 
 app = FastAPI()
