@@ -7,6 +7,10 @@ users = []
 
 @router.post("/")
 async def create_user(user : User):
+    for user in users:
+        if user.email == user.email:
+            return {"message": "Email already exists"}
+    user.id = len(users) + 1
     users.append(user)
     return {"message": "User created", "user": user.model_dump()}
 
